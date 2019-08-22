@@ -210,7 +210,7 @@ const process_outgoing_response = request => {
         "texts": [
             "Lubię wypić piwko, czasem dwa... ewentualnie siedem.",
             "Zostanę i ojebie jeszcze jedno. Żona i tak mnie zabiję jak wrócę.",
-            "Litr piwa zawiera 250 kalori, człowiek potrzebuje 2500 kalori dziennie. Wnioski nasuwają się same..."
+            "Litr piwa zawiera 250 kalorii, człowiek potrzebuje 2500 kalorii dziennie. Wnioski nasuwają się same..."
         ],
         "type": "phrase"
     }, {
