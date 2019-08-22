@@ -9,8 +9,9 @@ Simple Slack Bot which responds to slash command `/siara`
 
 ## Heroku
 
-You can deploy it wherever you want. I've used Heroku for example.
-Create an app at https://dashboard.heroku.com/apps and push it:
+You can deploy it wherever, but I've used Heroku.
+Create app at https://dashboard.heroku.com/apps
+and push app:
 
 ```bash
 $ heroku login
@@ -26,4 +27,8 @@ to your app instance, eg. https://my-bot-name.herokuapp.com/
 
 # Credits
 
-Based on SiaraBot by Michal Pieniazek https://github.com/michaelmoney/SiaraBot
+Based on SiaraBot by Michal Pieniazek: https://github.com/michaelmoney/SiaraBot
+
+The best JS tutors:
+* https://github.com/sealionkat
+* https://github.com/stepek

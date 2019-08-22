@@ -241,17 +241,26 @@ const app = express();
 const PORT = 3000;
 
 app.listen(process.env.PORT || PORT, function() {
-    console.log('Bot is listening on port ' + PORT);
+    console.log('Siara is listening on port ' + PORT);
 });
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
 app.post('/', (req, res) => {
-    var data = {
-        response_type: 'in_channel', // public to the channel
+    res.status(200).end();
 
-        text: process_outgoing_response(req)
-    };
-    res.json(data);
+    request.post(req.body.response_url, { 
+        json: {
+          response_type: 'in_channel', // public to the channel
+          text: process_outgoing_response(req)
+        }
+    }, (error, res, body) => {
+        if (error) {
+            console.error(error)
+            return
+        }
+        // console.log(`statusCode: ${res.statusCode}`)
+        // console.log(body)
+    });
 });
