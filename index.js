@@ -284,6 +284,10 @@ app.use(bodyParser.json());
 app.post('/', (req, res) => {
   res.status(200).end();
 
+  // free Heroku dyno sleeps after 30 min of inactivity
+  // it wakes up longer than Slack 3000ms window for response,
+  // so we have to quickly return http 200 and send answer 
+  // using delayed response to avoid timeout errors for cached requests
   request.post(req.body.response_url, { 
       json: {
         response_type: 'in_channel', // public to the channel
