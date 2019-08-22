@@ -5,7 +5,7 @@ const request = require("request");
 
 const process_outgoing_response = request => {
 
-    var phrases = [{
+    const phrases = [{
         "name": "siara",
         "texts": [
             '<target> nie chce mi się z Tobą gadać'
@@ -223,12 +223,13 @@ const process_outgoing_response = request => {
     }]
 
     // console.log("Processing: " + request.body.text);
-    if (request.body.text.toLowerCase() == "help") {
+    if (request.body.text.toLowerCase() === "help") {
         return `*Dostępne komendy:* ${phrases.map(phrase => phrase.name).toString()}`;
     } else {
         try {
-            var texts = phrases.find(item => item.name === request.body.text.toLowerCase()).texts;
-            var text = texts[Math.floor(Math.random() * texts.length)];
+            const texts = phrases.find(item => item.name === request.body.text.toLowerCase()).texts;
+            const text = texts[Math.floor(Math.random() * texts.length)];
+            
             return text.replace('<target>', '<@' + request.body.user_id + '>');
         } catch (e) {
             // console.log(e);
@@ -240,7 +241,7 @@ const process_outgoing_response = request => {
 const app = express();
 const PORT = 3000;
 
-app.listen(process.env.PORT || PORT, function() {
+app.listen(process.env.PORT || PORT, () => {
     console.log('Siara is listening on port ' + PORT);
 });
 app.use(bodyParser.urlencoded({
