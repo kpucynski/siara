@@ -233,8 +233,7 @@ const process_outgoing_response = request => {
             return text.replace('<target>', '<@' + request.body.user_id + '>');
         } catch (e) {
             // console.log(e);
-            console.log('Unknown text: ' + request.body.text);
-            return "Goń się <@" + request.body.user_id + ">";
+            return "<@" + request.body.user_id + ">, nie wiem co to `"+ request.body.text +"`, spróbuj: `help`";
         }
     }
 }
