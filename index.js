@@ -222,6 +222,12 @@ const process_outgoing_response = request => {
         "type": "phrase"
     }]
 
+     const phrases_help = [
+            '<target> nie wiem co to `<command>`, spróbuj `help`.',
+            'O co Ci chodzi <target>? `<command>`? Wpisz `help` to pogadamy.',
+            'Nie rozumiem Cię <target>. Jakie `<command>`? Napisz `help`, a nie...'
+        ];
+
     // console.log("Processing: " + request.body.text);
     if (request.body.text.toLowerCase() === "help") {
         return `*Dostępne komendy:* ${phrases.map(phrase => phrase.name).toString()}`;
@@ -233,7 +239,8 @@ const process_outgoing_response = request => {
             return text.replace('<target>', '<@' + request.body.user_id + '>');
         } catch (e) {
             // console.log(e);
-            return "<@" + request.body.user_id + ">, nie wiem co to `"+ request.body.text +"`, spróbuj: `help`";
+            const text = phrases_help[Math.floor(Math.random() * phrases_help.length)];
+            return text.replace('<target>', '<@' + request.body.user_id + '>').replace('<command>', request.body.text);
         }
     }
 }
