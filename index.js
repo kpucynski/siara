@@ -255,7 +255,7 @@ const phrasesHelp = [
 const processOutgoingResponse = request => {
   // console.log("Processing: " + request.body.text);
   if (request.body.text.toLowerCase() === 'help') {
-      return `*Dostępne komendy:* ${phrases.map(phrase => phrase.name).join(", ")}`;
+      return `*Dostępne komendy:* ${phrases.map(phrase => phrase.name).join(', ')}`;
   } else {
     try {
       const texts = phrases.find(item => item.name === request.body.text.toLowerCase()).texts;
