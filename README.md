@@ -1,6 +1,8 @@
 Siara Simple Slack Bot
 ======================
 
+[![Build Status](https://travis-ci.org/kpucynski/siara.svg?branch=master)](https://travis-ci.org/kpucynski/siara)
+
 # About
 
 Simple Slack Bot which responds to slash command `/siara`
