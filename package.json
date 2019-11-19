@@ -2,10 +2,7 @@
   "name": "siarabot",
   "version": "1.0.0",
   "description": "Siara",
-  "author": {
-    "name": "Karol Pucynski",
-    "email": "siara-bot@pucynski.pl"
-  },
+  "author": "Karol Pucynski <siara-bot@pucynski.pl>",
   "homepage": "http://github.com/kpucynski",
   "engines": {
     "node": "8.9.3"
