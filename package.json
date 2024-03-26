@@ -27,7 +27,7 @@
   "dependencies": {
     "body-parser": "1.19.0",
     "dotenv": "8.2.0",
-    "express": "4.17.1",
+    "express": "4.19.2",
     "npm-check-updates": "^3.2.1",
     "prettier": "^1.19.1",
     "request": "2.88.0"
